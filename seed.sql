@@ -1,0 +1,17 @@
+-- These are DEMO items and prices from the design preview. Replace them in the admin dashboard before sharing the store with customers.
+INSERT OR IGNORE INTO products (id,name,brand,category,price,stock,spec,tag,image,backImage,is_active) VALUES
+('p1','iPhone 17','Apple','iPhone',1850000,4,'256GB · Confirm exact model and price before ordering','Featured','https://www.apple.com/v/iphone-17/c/images/overview/contrast/iphone_17__ck7zzemcw37m_large.jpg','',1),
+('p2','Samsung Galaxy A16','Samsung','Samsung',310000,5,'256GB · Dual SIM · Confirm current stock','Popular','https://images.samsung.com/is/image/samsung/p6pim/africa_en/sm-a165fzkiafb/gallery/africa-en-galaxy-a16-sm-a165-sm-a165fzkiafb-544252058?$1164_776_PNG$=','',1),
+('p3','Tecno Spark 50','Tecno','Tecno',215000,6,'Large display · Confirm exact model','Great value','https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85','',1),
+('p4','Infinix Note 40','Infinix','Infinix',295000,7,'AMOLED · Confirm storage and stock','Everyday','https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=700&q=85','',1),
+('p5','iPhone 15','Apple','iPhone',1120000,4,'128GB · Confirm condition and exact price','Popular pick','https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=700&q=85','',1),
+('p6','Xiaomi Redmi Note 13','Xiaomi','Xiaomi',265000,8,'256GB · Confirm current stock','Value pick','https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85','',1),
+('p7','Samsung Galaxy A26 5G','Samsung','Samsung',420000,4,'128GB · Confirm current price','Balanced','https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85','',1),
+('p8','Wireless earbuds','Accessories','Accessories',45000,12,'Bluetooth · Charging case','Add-on','https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=85','',1),
+('p9','iPhone 17 Pro','Apple','iPhone',2350000,3,'Premium model · Confirm storage and price','Premium','https://www.apple.com/v/iphone-17/c/images/overview/contrast/iphone_17__ck7zzemcw37m_large.jpg','',1),
+('p10','Tecno Camon 30','Tecno','Tecno',345000,5,'256GB · Confirm exact model','Camera pick','https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85','',1),
+('p11','Infinix Hot 40','Infinix','Infinix',180000,7,'Large screen · Confirm current stock','Budget pick','https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=700&q=85','',1),
+('p12','Xiaomi Redmi Note 13 Pro','Xiaomi','Xiaomi',385000,4,'High-resolution camera · Confirm current price','Upgrade pick','https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85','',1),
+('laptop1','HP Laptop 15','HP','Laptops',650000,3,'Ask us to confirm RAM, storage and condition','Laptop','https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85','',1),
+('laptop2','Lenovo IdeaPad','Lenovo','Laptops',720000,3,'Ask us to confirm configuration and condition','Laptop','https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=900&q=85','',1),
+('laptop3','MacBook Air','Apple','Laptops',1450000,2,'Confirm chip, storage and condition','Premium','https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=85','',1);
