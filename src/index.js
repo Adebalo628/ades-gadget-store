@@ -76,13 +76,30 @@ async function productsApi(request, env, url) {
       : await env.DB.prepare("SELECT id,name,brand,category,price,stock,spec,tag,image,backImage,is_active FROM products WHERE is_active = 1 ORDER BY created_at DESC").all();
     return json({ products: result.results || [] });
   }
-  if (!admin) return json({ error: "Please sign in with the admin account." }, 401);
-  if (request.method === "POST" && url.pathname === "/api/products") {
-    let p; try { p = cleanProduct(await bodyJson(request)); } catch (e) { return json({ error: e.message || "Invalid product details." }, 400); }
-    const id = crypto.randomUUID();
-    await env.DB.prepare("INSERT INTO products (id,name,brand,category,price,stock,spec,tag,image,backImage,is_active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,1,datetime('now'),datetime('now'))")
-      .bind(id,p.name,p.brand,p.category,p.price,p.stock,p.spec,p.tag,p.image,p.backImage).run();
-    return json({ product: { id, ...p, is_active: 1 } }, 201);
+   if (request.method === "POST" && url.pathname === "/api/products") {
+    let p;
+    try {
+      p = cleanProduct(await bodyJson(request));
+    } catch (e) {
+      return json({ error: e.message || "Invalid product details." }, 400);
+    }
+   const result = await env.DB.prepare(
+      "INSERT INTO products (name,brand,category,price,stock,spec,tag,image,backImage,active,is_active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,1,1,datetime('now'),datetime('now'))"
+    ).bind(
+      p.name,
+      p.brand,
+      p.category,
+      p.price,
+      p.stock,
+      p.spec,
+      p.tag,
+      p.image,
+      p.backImage
+    ).run();
+
+    const id = result.meta.last_row_id;
+
+    return json({ product: { id, ...p, active: 1, is_active: 1 } }, 201);
   }
   const match = url.pathname.match(/^\/api\/products\/([A-Za-z0-9-]+)$/i);
   if (match && request.method === "PUT") {
